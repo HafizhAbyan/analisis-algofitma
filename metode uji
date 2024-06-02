@@ -1,0 +1,19 @@
+#include<iostream>
+#include<chrono>
+
+int main(){
+
+auto start = std::chrono::high_resolution_clock::now();
+
+    //metode sorting yang digunakan
+
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+
+    std::cout << "Array setelah diurutkan: ";
+    for (const int& num : array) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "Executin time: " << duration.count() << "μs" << std::endl;
+}
